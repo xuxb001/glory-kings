@@ -1,5 +1,5 @@
 <template>
-  <div>{{ 'xxxxx' }}</div>
+  <div>1111111111</div>
 </template>
 
 <script lang="ts">
@@ -9,6 +9,9 @@ export default defineComponent({
   name: 'HomeItem',
   setup() {
     return {}
+  },
+  mounted() {
+    console.log('24345345')
   }
 })
 </script>
