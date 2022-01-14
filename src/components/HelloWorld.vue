@@ -1,52 +1,51 @@
-<script setup lang="ts">
-import { ref } from 'vue'
-
-defineProps<{ msg: string }>()
-
-const count = ref(0)
-</script>
-
 <template>
-  <h1>{{ msg }}</h1>
-
-  <p>
-    Recommended IDE setup:
-    <a href="https://code.visualstudio.com/" target="_blank">VSCode</a>
-    +
-    <a href="https://github.com/johnsoncodehk/volar" target="_blank">Volar</a>
-  </p>
-
-  <p>See <code>README.md</code> for more information.</p>
-
-  <p>
-    <a href="https://vitejs.dev/guide/features.html" target="_blank">
-      Vite Docs
-    </a>
-    |
-    <a href="https://v3.vuejs.org/" target="_blank">Vue 3 Docs</a>
-  </p>
-
-  <button type="button" @click="count++">count is: {{ count }}</button>
-  <p>
-    Edit
-    <code>components/HelloWorld.vue</code> to test hot module replacement.
-  </p>
+  <div class="header">
+    <div class="title" @click="router.push('/')">
+      Vite2.x + Vue3.x + TypeScript Starter
+    </div>
+    <div class="go-github" @click="goGitHub">
+      <i class="icon el-icon-s-promotion"></i> GitHub
+    </div>
+  </div>
 </template>
 
-<style scoped>
-a {
-  color: #42b983;
-}
+<script lang="ts" setup>
+import { useRouter } from 'vue-router'
 
-label {
-  margin: 0 0.5em;
-  font-weight: bold;
-}
+// eslint-disable-next-line no-unused-vars
+const router = useRouter()
 
-code {
-  background-color: #eee;
-  padding: 2px 4px;
-  border-radius: 4px;
-  color: #304455;
+// eslint-disable-next-line no-unused-vars
+const goGitHub = () => {
+  window.open('https://github.com/XPoet/vite-vue3-starter')
+}
+</script>
+
+<style scoped lang="stylus">
+
+.header {
+  width 100%
+  height 100%
+  background #fff
+  display flex
+  justify-content space-between
+  align-items center
+  padding 0 20px
+  box-sizing border-box
+  font-weight bold
+
+  .title {
+    font-size 20px
+    cursor pointer
+  }
+
+  .go-github {
+    cursor pointer
+    font-size 16px
+
+    .icon {
+      font-size 20px
+    }
+  }
 }
 </style>
