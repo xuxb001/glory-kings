@@ -37,7 +37,7 @@ export default defineComponent({
 })
 </script>
 
-<style scoped lang="stylus">
+<style scoped lang="scss">
 .el-carousel__item h3 {
   color: #475669;
   font-size: 14px;
@@ -54,7 +54,9 @@ export default defineComponent({
 .el-carousel__item:nth-child(2n + 1) {
   background-color: #d3dce6;
 }
-#home :deep(.el-carousel__container) {
-  background: rgba(0, 0, 0, 0.7);
+#home {
+  :deep(.el-carousel__container) {
+    background: rgba(0, 0, 0, 0.7);
+  }
 }
 </style>

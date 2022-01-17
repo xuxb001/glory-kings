@@ -18,7 +18,6 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist',
-    // 9月更新
     assetsDir: 'assets', // 指定静态资源存放路径
     sourcemap: false, // 是否构建source map 文件
     terserOptions: {
@@ -43,6 +42,19 @@ export default defineConfig({
     //     rewrite: (path) => path.replace(/^\/api/, '')
     //   }
     // }
+  },
+  css: {
+    // 配置 CSS modules 的行为。选项将被传递给 postcss-modules。
+    modules: {},
+    // PostCSS 配置（格式同 postcss.config.js）
+    // postcss-load-config 的插件配置
+    postcss: {},
+    // 指定传递给 CSS 预处理器的选项
+    preprocessorOptions: {
+      scss: {
+        additionalData: '@import "@/assets/scss/global.scss";'
+      }
+    }
   },
   // 引入第三方的配置
   optimizeDeps: {
