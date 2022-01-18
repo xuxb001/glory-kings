@@ -5,7 +5,7 @@ import router from '@/router/index'
 import { key, store } from '@/store'
 import 'element-plus/dist/index.css'
 import styleImport from '@/utils/style-import'
-// import '@/style/basic.styl'
+import '@/style/basic.styl'
 
 const app = createApp(App)
 
