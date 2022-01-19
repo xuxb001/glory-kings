@@ -1,19 +1,15 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import path from 'path'
+import importElementPlus from 'vite-plugin-element-plus'
+// 如果编辑器提示 path 模块找不到，则可以安装一下 @types/node -> npm i @types/node -D
+import { resolve } from 'path'
 
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [vue(), importElementPlus({})],
   base: './', // 类似publicPath，'./'避免打包访问后空白页面，要加上，不然线上也访问不了
   resolve: {
     alias: {
-      // 如果报错__dirname找不到，需要安装node,执行npm install @types/node --save-dev
-      '@': path.resolve(__dirname, 'src'),
-      '@assets': path.resolve(__dirname, 'src/assets'),
-      '@components': path.resolve(__dirname, 'src/components'),
-      '@images': path.resolve(__dirname, 'src/assets/images'),
-      '@views': path.resolve(__dirname, 'src/views'),
-      '@store': path.resolve(__dirname, 'src/store')
+      '@': resolve(__dirname, 'src') // 设置 `@` 指向 `src` 目录
     }
   },
   build: {
@@ -29,18 +25,13 @@ export default defineConfig({
     }
   },
   server: {
-    open: true // 是否自动在浏览器打开
+    open: true, // 是否自动在浏览器打开
+    cors: true, // 允许跨域
+    port: 3003 // 端口号
     // https: false, // 是否开启 https
-    // port: 3000, // 端口号
     // host: '0.0.0.0',
     // proxy: {
-    //   '/api': {
-    //     target: '', // 后台接口
-    //     changeOrigin: true,
-    //     secure: false, // 如果是https接口，需要配置这个参数
-    //     // ws: true, //websocket支持
-    //     rewrite: (path) => path.replace(/^\/api/, '')
-    //   }
+    //   '/api': 'http://localhost:3003'
     // }
   },
   css: {
@@ -52,7 +43,7 @@ export default defineConfig({
     // 指定传递给 CSS 预处理器的选项
     preprocessorOptions: {
       scss: {
-        additionalData: '@import "@/assets/scss/global.scss";'
+        additionalData: '@import "@/assets/styles/global.scss";'
       }
     }
   },

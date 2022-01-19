@@ -1,6 +1,5 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
-import './style/basic.styl'
 
 export default defineComponent({
   name: 'App'
