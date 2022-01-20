@@ -43,7 +43,8 @@ export default defineConfig({
     // 指定传递给 CSS 预处理器的选项
     preprocessorOptions: {
       scss: {
-        additionalData: '@import "@/assets/styles/global.scss";'
+        javascriptEnabled: true
+        // additionalData: '@import "@/assets/styles/index.scss";'
       }
     }
   },
