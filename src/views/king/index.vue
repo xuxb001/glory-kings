@@ -1,46 +1,68 @@
-<script lang="ts" setup>
-import Head from './modular/head/index.vue'
-
-// 定义数组对象方法一
-// const urlArr: Array<{
-//   code: string
-//   name: string
-// }> = [
-//   { name: '1', code: url1 },
-//   { name: '2', code: url2 },
-//   { name: '3', code: url3 },
-//   { name: '5', code: url5 },
-//   { name: '6', code: url6 },
-//   { name: '11', code: url11 }
-// ]
-// 定义数组对象方法二
-// type TestType = {
-//   name: string
-//   code: string
-// }
-// const urlArr: TestType[] = [
-//   { name: '1', code: url1 },
-//   { name: '2', code: url2 },
-//   { name: '3', code: url3 },
-//   { name: '5', code: url5 },
-//   { name: '6', code: url6 },
-//   { name: '11', code: url11 }
-// ]
-
-// function getHome() {
-//   getHomeData()
-//     .then((res) => {
-//       console.log('res', res)
-//     })
-//     .catch((err) => {
-//       console.log('err', err)
-//     })
-// }
-// getHome()
-</script>
 <template>
   <div id="king">
-    <Head />
+    <el-table :data="tableData" style="width: 100%">
+      <el-table-column v-for="item in column"  :key='item.key' :prop="item.key" :label="item.value"/>
+      <el-table-column label="操作" width="180">
+          <template #default="scope">
+            <el-button type="primary" plain text size="small" @click="dialogVisible = true">preview</el-button>
+          </template>
+      </el-table-column>
+    </el-table>
+    <Lvbu v-model:dialogVisible="dialogVisible" @on-confirm="onConfirm"/>
   </div>
 </template>
+
+<script lang="ts" >
+import Lvbu from './modular/Lvbu.vue'
+import { defineComponent, toRefs, reactive,ref} from 'vue'
+interface State {
+    dialogVisible: boolean
+}
+export default defineComponent ({
+  components: {
+    Lvbu
+  },
+  setup(){
+    const column = reactive([
+      {key: 'name', value: '姓名'},
+      {key: 'location', value: '定位'},
+      {key: 'skillNum', value: '技能个数'},
+    ]);
+    const tableData = reactive([
+      {
+        location: 'assassin',
+        name: 'libai',
+        skillNum: '3',
+      },
+      {
+        location: 'warrior',
+        name: 'lvbu',
+        skillNum: '3',
+      }
+    ]);
+    const state = reactive<State>({
+        dialogVisible: false,
+    })
+    const onConfirm = (value: string) => {
+        console.log('父组件打印:', value)
+        state.dialogVisible = false
+    }
+    return {
+      column,
+      tableData,
+      ...toRefs(state),
+      onConfirm,
+    }
+  },
+  methods: {
+    preview() {
+      console.log('preview')
+    }
+  }
+})
+
+
+
+</script>
+
 <style scoped lang="scss"></style>
