@@ -10,6 +10,16 @@ const routes: Array<RouteRecordRaw> = [
     path: '/king',
     name: 'king',
     component: () => import('@/views/king/index.vue')
+  },
+  {
+    path: '/queen',
+    name: 'queen',
+    component: () => import('@/views/queen/index.vue')
+  },
+  {
+    path: '/open-box',
+    name: 'open-box',
+    component: () => import('@/views/open-box/index.vue')
   }
 ]
 

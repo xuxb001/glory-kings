@@ -8,19 +8,19 @@
           </template>
       </el-table-column>
     </el-table>
-    <Lvbu v-model:dialogVisible="dialogVisible" @on-confirm="onConfirm"/>
+    <myDialog v-model:dialogVisible="dialogVisible" @on-confirm="onConfirm"/>
   </div>
 </template>
 
 <script lang="ts" >
-import Lvbu from './modular/Lvbu.vue'
+import myDialog from './modular/myDialog.vue'
 import { defineComponent, toRefs, reactive,ref} from 'vue'
 interface State {
     dialogVisible: boolean
 }
 export default defineComponent ({
   components: {
-    Lvbu
+    myDialog
   },
   setup(){
     const column = reactive([
