@@ -7,6 +7,7 @@ import 'element-plus/dist/index.css'
 import 'element-plus/theme-chalk/display.css'
 import './assets/styles/index.scss'
 import styleImport from './utils/style-import'
+import 'animate.css/animate.min.css'
 
 const app = createApp(App)
 

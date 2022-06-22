@@ -20,6 +20,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/open-box',
     name: 'open-box',
     component: () => import('@/views/open-box/index.vue')
+  },
+  {
+    path: '/find-earth',
+    name: 'find-earth',
+    component: () => import('@/views/find-earth/index.vue')
   }
 ]
 
