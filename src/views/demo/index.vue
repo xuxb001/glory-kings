@@ -45,7 +45,9 @@
         <template #title>Navigator Four</template>
       </el-menu-item>
     </el-menu>
-    <el-button :class="isCollapse ? 'collapse-right':'collapse-left' " :icon="isCollapse ? DArrowRight : DArrowLeft" @click="isExpand"></el-button>
+    <!-- <transition :name="isCollapse ? 'el-fade-in-linear':'el-fade-in'">
+      <el-button :class="isCollapse ? 'collapse-right':'collapse-left' "  :icon="isCollapse ? DArrowRight : DArrowLeft" @click="isExpand"></el-button>
+    </transition> -->
     <div class="content">
       <router-view></router-view>
     </div>
