@@ -31,6 +31,23 @@ const routes: Array<RouteRecordRaw> = [
     path: '/find-earth',
     name: 'find-earth',
     component: () => import(/* webpackChunkName: "about" */'@/views/find-earth/index.vue')
+  },
+  {
+    path: '/demo',
+    name: 'demo',
+    component: () => import(/* webpackChunkName: "about" */'@/views/demo/index.vue'),
+    children:[
+      {
+        path: '/demo1',
+        name: 'demo1',
+        component: () => import(/* webpackChunkName: "about" */'@/views/demo/components/demo1/index.vue'),
+      },
+      {
+        path: '/demo2',
+        name: 'demo2',
+        component: () => import(/* webpackChunkName: "about" */'@/views/demo/components/demo2/index.vue'),
+      }
+    ]
   }
 ]
 

@@ -1,13 +1,5 @@
 <template>
   <div class="kingdom">
-    <!-- <el-menu :default-active="defaultActive" class="el-menu-vertical-demo">
-        <el-menu-item v-for="(item, index) in menuList" :key="index" :index="item.code">
-          <i class="el-icon-setting"></i>
-          <span>
-            <router-link :to="item.path">{{item.king}}</router-link>
-          </span>
-        </el-menu-item>
-    </el-menu> -->
     <div class="btn-menu">
       <span v-for="(item, index) in menuList" :key="index">
         <el-button @click="toRoute(item.path)">{{item.name}}</el-button>
@@ -36,8 +28,7 @@ export default {
         path:'kingdom/queen',
         name:'queen',
         code:'2'
-      }],
-      defaultActive:'1'
+      }]
     }
   },
   methods:{
