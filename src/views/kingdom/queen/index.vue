@@ -15,6 +15,7 @@
 
 <script>
 export default {
+  name: 'queen',
   data(){
     return{
       tips:['all apps', 'dif', 'klosd','script','grid','height','false','light','bmdc']

@@ -15,10 +15,12 @@
 <script lang="ts" >
 import myDialog from './modular/myDialog.vue'
 import { defineComponent, toRefs, reactive,ref} from 'vue'
+
 interface State {
     dialogVisible: boolean
 }
 export default defineComponent ({
+  name: 'king',
   components: {
     myDialog
   },

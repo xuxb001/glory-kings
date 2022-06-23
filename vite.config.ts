@@ -1,11 +1,23 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import importElementPlus from 'vite-plugin-element-plus'
+import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 // 如果编辑器提示 path 模块找不到，则可以安装一下 @types/node -> npm i @types/node -D
 import { resolve } from 'path'
 
 export default defineConfig({
-  plugins: [vue(), importElementPlus({})],
+  plugins: [
+    vue(),
+    importElementPlus({}),
+    AutoImport({
+      resolvers: [ElementPlusResolver()],
+    }),
+    Components({
+      resolvers: [ElementPlusResolver()],
+    }),
+  ],
   base: './', // 类似publicPath，'./'避免打包访问后空白页面，要加上，不然线上也访问不了
   resolve: {
     alias: {
@@ -27,9 +39,9 @@ export default defineConfig({
   server: {
     open: true, // 是否自动在浏览器打开
     cors: true, // 允许跨域
-    port: 3003 // 端口号
+    port: 3003, // 端口号
     // https: false, // 是否开启 https
-    // host: '0.0.0.0',
+    host: '0.0.0.0',
     // proxy: {
     //   '/api': 'http://localhost:3003'
     // }
