@@ -1,15 +1,3 @@
-<script lang="ts" setup>
-import { reactive } from 'vue'
-
-const mouseObj = reactive({
-  display: 'none'
-})
-function mouseHover(type: string) {
-  if (type === 'mouseover') mouseObj.display = 'block'
-  else mouseObj.display = 'none'
-}
-mouseHover()
-</script>
 <template>
   <div class="head">
     <ul class="ost_inner ost_lsn">
@@ -73,6 +61,16 @@ mouseHover()
     </div>
   </div>
 </template>
+<script lang="ts" setup>
+import { reactive } from 'vue'
+const mouseObj = reactive({
+  display: 'none'
+})
+const mouseHover = (type: string) =>{
+  if (type === 'mouseover') mouseObj.display = 'block'
+  else mouseObj.display = 'none'
+}
+</script>
 <style scoped lang="scss">
 .head {
   .ost_inner {

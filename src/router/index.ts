@@ -23,11 +23,6 @@ const routes: Array<RouteRecordRaw> = [
       }]
   },
   {
-    path: '/open-box',
-    name: 'open-box',
-    component: () => import(/* webpackChunkName: "about" */'@/views/open-box/index.vue')
-  },
-  {
     path: '/find-earth',
     name: 'find-earth',
     component: () => import(/* webpackChunkName: "about" */'@/views/find-earth/index.vue')

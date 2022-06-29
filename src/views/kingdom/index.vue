@@ -8,17 +8,11 @@
     <router-view></router-view>
   </div>
 </template>
-
-<script>
-export default {
-  components:{
-
-  },
-  watch:{
-  },
-  data(){
-    return{
-      menuList:[
+<script lang="ts" setup>
+import { ref, reactive } from "vue"
+import { useRouter } from "vue-router";
+  const router = useRouter();
+  const menuList = reactive([
       {
         path:'kingdom/king',
         name:'king',
@@ -28,15 +22,10 @@ export default {
         path:'kingdom/queen',
         name:'queen',
         code:'2'
-      }]
-    }
-  },
-  methods:{
-    toRoute(val){
-      this.$router.push({ path: val })
-    }
+      }])
+  const toRoute = (val: string) => {
+    router.push({ path: val })
   }
-}
 </script>
 <style lang="scss" scoped>
 .kingdom{

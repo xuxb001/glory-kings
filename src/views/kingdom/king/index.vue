@@ -4,7 +4,7 @@
       <el-table-column v-for="item in column"  :key='item.key' :prop="item.key" :label="item.value"/>
       <el-table-column label="操作" width="180">
           <template #default="scope">
-            <el-button type="primary" plain text size="small" @click="dialogVisible = true">preview</el-button>
+            <el-button type="primary" plain text size="small" @click="handlePreview">preview</el-button>
           </template>
       </el-table-column>
     </el-table>
@@ -12,19 +12,10 @@
   </div>
 </template>
 
-<script lang="ts" >
+<script lang="ts" setup>
 import myDialog from './modular/myDialog.vue'
 import { defineComponent, toRefs, reactive,ref} from 'vue'
-
-interface State {
-    dialogVisible: boolean
-}
-export default defineComponent ({
-  name: 'king',
-  components: {
-    myDialog
-  },
-  setup(){
+    const dialogVisible = ref(false)
     const column = reactive([
       {key: 'name', value: '姓名'},
       {key: 'location', value: '定位'},
@@ -42,29 +33,13 @@ export default defineComponent ({
         skillNum: '3',
       }
     ]);
-    const state = reactive<State>({
-        dialogVisible: false,
-    })
     const onConfirm = (value: string) => {
-        console.log('父组件打印:', value)
-        state.dialogVisible = false
+      console.log('父组件打印:', value)
+      dialogVisible.value = false
     }
-    return {
-      column,
-      tableData,
-      ...toRefs(state),
-      onConfirm,
+    const handlePreview = () => {
+      dialogVisible.value = true
     }
-  },
-  methods: {
-    preview() {
-      console.log('preview')
-    }
-  }
-})
-
-
-
 </script>
 
 <style scoped lang="scss"></style>

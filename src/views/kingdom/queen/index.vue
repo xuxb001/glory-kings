@@ -13,15 +13,9 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'queen',
-  data(){
-    return{
-      tips:['all apps', 'dif', 'klosd','script','grid','height','false','light','bmdc']
-    }
-  }
-}
+<script lang="ts" setup>
+import { reactive } from 'vue'
+const tips = reactive(['all apps', 'dif', 'klosd','script','grid','height','false','light','bmdc'])
 </script>
 <style lang="scss" scoped>
   .el-col {

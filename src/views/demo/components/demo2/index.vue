@@ -5,13 +5,6 @@
   </div>
 </template>
 <script setup lang='ts'>
-import {
-  reactive,
-  ref,
-  toRefs,
-  onBeforeMount,
-  onMounted
-} from 'vue';
 // 不需要return,直接在里面写代码就行了，接收参数用 defineProps,传递方法用 defineEmits
 const props = defineProps({
   msg:{

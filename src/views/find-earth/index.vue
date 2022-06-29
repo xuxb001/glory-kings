@@ -4,21 +4,12 @@
   </div>
 </template>
 
-<script>
-
-export default {
-  name: 'App',
-  data () {
-    return {
-      visible: false
-    }
-  },
-  methods: {
-    toggleVisible () {
-      this.visible = !this.visible
-    }
+<script lang="ts" setup>
+  import { ref} from "vue"
+  const visible = ref(false)
+  const toggleVisible= () =>{
+    visible.value = !visible.value
   }
-}
 </script>
 
 <style lang="scss" scoped>
