@@ -19,7 +19,7 @@ const props = defineProps({
     default:()=>'默认值'
   }
 })
-const emit=defineEmits(["on-change"])    //方法名
+const emit = defineEmits(["on-change"])    //方法名
 const handleClick = () => {
   emit("on-change","子组件方法被调用")
 }
