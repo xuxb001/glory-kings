@@ -1,6 +1,6 @@
 <template>
   <div id="home">
-    <router-link to="/find-earth">
+    <router-link to="/demo">
       <img :src="enter" alt="" />
     </router-link>
   </div>

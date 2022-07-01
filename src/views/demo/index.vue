@@ -13,7 +13,7 @@
       <el-sub-menu index="1">
         <template #title>
           <el-icon><location /></el-icon>
-          <span>Navigator One</span>
+          <span>Concept class</span>
         </template>
         <el-menu-item-group>
           <template #title><span>Group One</span></template>
@@ -22,6 +22,9 @@
           </el-menu-item>
           <el-menu-item index="1-2" @click="toRouter('demo/demo2')">
             demo2
+          </el-menu-item>
+          <el-menu-item index="1-2" @click="toRouter('demo/demo3')">
+            demo3
           </el-menu-item>
         </el-menu-item-group>
         <el-menu-item-group title="Group Two">
@@ -101,7 +104,9 @@ const toRouter = (val: string) => {
     left: 64px;
   }
   .content{
-    padding: 32px 20px 0 10px;
+    padding: 0 20px 0 10px;
+    height: 100vh;
+    overflow: auto;
   }
 }
 </style>
