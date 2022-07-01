@@ -1,14 +1,14 @@
 <template>
   <div id="home">
     <router-link to="/demo">
-      <img :src="enter" alt="" />
+      <img :src="xingkong" alt="" />
     </router-link>
   </div>
 </template>
 
 <script lang="ts" setup>
 import url from '@/assets/images/logo.png'
-import enter from '@/assets/images/find-earth/enter.gif'
+import xingkong from '@/assets/images/find-earth/xingkong.jpeg'
 </script>
 
 <style scoped lang="scss">
