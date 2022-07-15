@@ -45,6 +45,7 @@ export default defineConfig({
     // proxy: {
     //   '/api': 'http://localhost:3003'
     // }
+    https: true
   },
   css: {
     // 配置 CSS modules 的行为。选项将被传递给 postcss-modules。

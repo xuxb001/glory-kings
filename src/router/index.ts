@@ -46,6 +46,11 @@ const routes: Array<RouteRecordRaw> = [
         path: '/demo3',
         name: 'demo3',
         component: () => import(/* webpackChunkName: "about" */'@/views/demo/components/demo3/index.vue'),
+      },
+      {
+        path: '/demo4',
+        name: 'demo4',
+        component: () => import(/* webpackChunkName: "about" */'@/views/demo/components/demo4/index.vue'),
       }
     ]
   }

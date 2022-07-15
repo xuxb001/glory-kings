@@ -18,17 +18,28 @@
         <el-menu-item-group>
           <template #title><span>Group One</span></template>
           <el-menu-item index="1-1" @click="toRouter('demo/demo1')">
-            demo1
+            vue3初体验
           </el-menu-item>
           <el-menu-item index="1-2" @click="toRouter('demo/demo2')">
-            demo2
+            vue3的三种写法
           </el-menu-item>
-          <el-menu-item index="1-2" @click="toRouter('demo/demo3')">
-            demo3
+          <el-menu-item index="1-3" @click="toRouter('demo/demo3')">
+            父子通信
+          </el-menu-item>
+          <el-menu-item index="1-4" @click="toRouter('demo/demo4')">
+            10种现代布局
           </el-menu-item>
         </el-menu-item-group>
         <el-menu-item-group title="Group Two">
-          <el-menu-item index="1-3">item three</el-menu-item>
+          <el-menu-item index="2-1" @click="toRouter('demo/demo5')">
+            demo1
+          </el-menu-item>
+          <!-- <el-menu-item index="2-2" @click="toRouter('demo/demo2')">
+            demo2
+          </el-menu-item>
+          <el-menu-item index="2-3" @click="toRouter('demo/demo3')">
+            demo3
+          </el-menu-item> -->
         </el-menu-item-group>
         <el-sub-menu index="1-4">
           <template #title><span>item four</span></template>
@@ -107,6 +118,7 @@ const toRouter = (val: string) => {
     padding: 0 20px 0 10px;
     height: 100vh;
     overflow: auto;
+    width: 100%;
   }
 }
 </style>
