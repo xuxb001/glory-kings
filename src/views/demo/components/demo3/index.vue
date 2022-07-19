@@ -4,6 +4,8 @@
     <el-button @click="toChild">to child</el-button>
     <Child :msg="data.msg" @toChild="getChildMsg"/>
     {{data.formChild}}
+
+    <p v-for="e in bb" :key="e">{{e}}</p>
   </div>
 </template>
 
@@ -23,4 +25,7 @@ const getChildMsg = (value: string) => {
 const toChild = () => {
   data.msg = 'change from father msg'
 }
+
+const bb = reactive(JSON.parse(localStorage.getItem('aa')))
+
 </script>
