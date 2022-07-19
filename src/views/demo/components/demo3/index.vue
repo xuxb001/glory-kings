@@ -10,7 +10,7 @@
 
 <script setup lang='ts'>
 import Child from "./components/demo3Child.vue"
-import {ref,reactive, toRefs} from "vue"
+import {reactive} from "vue"
 
 const data = reactive({
   msg:'I am from father',
