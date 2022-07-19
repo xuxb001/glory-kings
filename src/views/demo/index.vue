@@ -17,23 +17,14 @@
         </template>
         <el-menu-item-group>
           <template #title><span>Group One</span></template>
-          <el-menu-item index="1-1" @click="toRouter('demo/demo1')">
-            vue3初体验
-          </el-menu-item>
-          <el-menu-item index="1-2" @click="toRouter('demo/demo2')">
-            vue3的三种写法
-          </el-menu-item>
-          <el-menu-item index="1-3" @click="toRouter('demo/demo3')">
-            父子通信
-          </el-menu-item>
-          <el-menu-item index="1-4" @click="toRouter('demo/demo4')">
-            10种现代布局
+          <el-menu-item v-for="(item,index) in menuItem" :key="index" :index="item.index" @click="toRouter(item.url)">
+            {{item.name}}
           </el-menu-item>
         </el-menu-item-group>
         <el-menu-item-group title="Group Two">
-          <el-menu-item index="2-1" @click="toRouter('demo/demo5')">
-            demo1
-          </el-menu-item>
+          <!-- <el-menu-item index="2-1" @click="toRouter('demo/demo6')">
+            demo6
+          </el-menu-item> -->
           <!-- <el-menu-item index="2-2" @click="toRouter('demo/demo2')">
             demo2
           </el-menu-item>
@@ -80,6 +71,13 @@ import {
 import { useRouter } from "vue-router";
 const router = useRouter();
 const isCollapse = ref(false)
+const menuItem = reactive([
+  {index: '1-1',name:'vue3初体验',url: 'demo/demo1'},
+  {index: '1-2',name:'vue3的三种写法',url: 'demo/demo2'},
+  {index: '1-3',name:'父子通信',url: 'demo/demo3'},
+  {index: '1-4',name:'10种现代布局',url: 'demo/demo4'},
+  {index: '1-5',name:'模拟Stroe',url: 'demo/demo5'}
+])
 const handleOpen = (key: string, keyPath: string[]) => {
   console.log(key, keyPath)
 }
@@ -90,6 +88,7 @@ const isExpand = () => {
   isCollapse.value = !isCollapse.value
 }
 const toRouter = (val: string) => {
+  console.log('val',val)
     router.push({path: val})
 }
 </script>
