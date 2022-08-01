@@ -5,9 +5,9 @@
     <ul>
       <li>1,Option Api （与vue2写法相同）</li>
       <li>2,Composition API （setup()函数写法）</li>
-      <li>{{'3,<script setup> （Composition API 的语法糖）'}}</li>
+      <li>{{aa}}</li>
     </ul>
-    <p>{{"这里主要讲下<script setup>的一些写法，因为这种写法比较简洁，推荐使用这种写法"}}</p>
+    <p>{{bb}}</p>
     <h3>ref, reactive, toRef, toRefs 的区别</h3>
     <ul>
       <li>1,ref 可以把基本数据类型数据，转成响应式对象</li>
@@ -53,6 +53,8 @@
 </template>
 <script setup lang='ts'>
 import {ref,reactive, toRefs,toRef} from 'vue'
+const aa = ref('3,<script setup> （Composition API 的语法糖）')
+const bb = ref("这里主要讲下<script setup>的一些写法，因为这种写法比较简洁，推荐使用这种写法")
 // refrefref =========================
 //可以理解为这样
 // const a = 1

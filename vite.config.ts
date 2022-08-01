@@ -21,7 +21,11 @@ export default defineConfig({
   base: './', // 类似publicPath，'./'避免打包访问后空白页面，要加上，不然线上也访问不了
   resolve: {
     alias: {
-      '@': resolve(__dirname, 'src') // 设置 `@` 指向 `src` 目录
+      '@': resolve(__dirname, 'src'), // 设置 `@` 指向 `src` 目录
+      find: 'web3',
+      replacement: 'web3/dist/web3.min.js',
+      // "buffer": "buffer",
+      // "stream": "stream-browserify"
     }
   },
   build: {
@@ -63,5 +67,9 @@ export default defineConfig({
   // 引入第三方的配置
   optimizeDeps: {
     include: []
+  },
+  define:{
+    'process.env': process.env,
+    // global:{}
   }
 })
