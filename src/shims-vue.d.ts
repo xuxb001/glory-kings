@@ -9,6 +9,7 @@ declare module '*.vue' {
 
   // export default Vue
 }
+declare module "@types/three"
 // interface ImportMetaEnv {
 //   // 请求地址
 //   readonly VITE_APP_BASE_API: string

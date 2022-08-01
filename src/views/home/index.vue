@@ -1,14 +1,16 @@
 <template>
   <div id="home">
-    <router-link to="/demo">
+    <login/>
+    <!-- <router-link to="/demo">
       <img :src="xingkong" alt="" />
-    </router-link>
+    </router-link> -->
   </div>
 </template>
 
 <script lang="ts" setup>
 import url from '@/assets/images/logo.png'
 import xingkong from '@/assets/images/find-earth/xingkong.jpeg'
+import login from "./login.vue"
 </script>
 
 <style scoped lang="scss">
