@@ -1,9 +1,9 @@
 <template>
-  <div>
-    、、、、、、、、、、、
-    <button @click="handleWalletConnect">WalletConnect</button>
-    <button @click="resetApp">resetApp</button>
-    <!-- <button @click="getAccountAssets">getBalance</button>
+    <div>
+        、、、、、、、、、、、
+        <button @click="handleWalletConnect">WalletConnect</button>
+        <button @click="resetApp">resetApp</button>
+        <!-- <button @click="getAccountAssets">getBalance</button>
     <button @click="approve">approveUSDTContract</button>
     <p>
       Address:
@@ -12,33 +12,33 @@
     <p>balance:{{ assets }}</p>
     <p>networkId: {{ networkId }}</p>
     <p>chainId: {{ chainId }}</p> -->
-  </div>
+    </div>
 </template>
 <script lang="ts" setup>
 // import { computed } from 'vue';
 // import { utils } from 'web3';
-import useWallet from '../../../../hooks/useWallte.js';
+import useWallet from '../../../../hooks/useWallte.js'
 // import { USDT_API } from '@/web3/abis.js';
 // import { USDT_ADDRESS } from '@/web3/config.js';
 
 const {
-  onConnect,
-  connected,
-  // web3,
-  // userAddress,
-  // chainId,
-  // networkId,
-  resetApp,
-  // assets,
-  // getAccountAssets,
-} = useWallet();
+    onConnect,
+    connected,
+    // web3,
+    // userAddress,
+    // chainId,
+    // networkId,
+    resetApp
+    // assets,
+    // getAccountAssets,
+} = useWallet()
 
 const handleWalletConnect = async () => {
-  await onConnect();
-  if (connected) {
-    console.log('afterConnectdWallet', connected);
-  }
-};
+    await onConnect()
+    if (connected) {
+        console.log('afterConnectdWallet', connected)
+    }
+}
 // const contract = computed(
 //   () => new web3.value.eth.Contract(USDT_API, USDT_ADDRESS),
 // );
@@ -49,6 +49,4 @@ const handleWalletConnect = async () => {
 // }
 
 // .....
-
 </script>
-

@@ -1,4 +1,3 @@
-<!-- vue3.0中的写法-->
 <template>
   <div class="demo4">
 
@@ -248,9 +247,9 @@
 
   .layout7{
     display: grid;
-    height: 100vh;
+    height: 500px;
     grid-gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     div {
       display: grid;
       place-items: center;
